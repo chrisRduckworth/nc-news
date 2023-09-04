@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import dayjs from "dayjs"
 
 function ArticleCard({ article }) {
   const {
@@ -10,7 +11,6 @@ function ArticleCard({ article }) {
     topic,
     votes,
   } = article;
-  const date = created_at.slice(0, 10);
   return (
     <div className="article-card">
       <Link to={`/articles/${article_id}`}>
@@ -20,7 +20,7 @@ function ArticleCard({ article }) {
       <p className="article-card-topic">{topic}</p>
       <p className="article-card-rating">{votes} votes</p>
       <p className="article-card-author">{author}</p>
-      <p className="article-card-date">{date}</p>
+      <p className="article-card-date">{dayjs(created_at).format("DD/MM/YYYY")}</p>
     </div>
   );
 }

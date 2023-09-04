@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import { getArticleById } from "../../../utils/api";
+import dayjs from "dayjs";
 
 function Content({ article_id }) {
   const [article, setArticle] = useState({});
-  const [date, setDate] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     getArticleById(article_id).then((articleData) => {
       setIsLoading(false);
       setArticle(articleData);
-      setDate(articleData.created_at.slice(0, 10));
     });
   }, []);
 
@@ -20,15 +18,16 @@ function Content({ article_id }) {
   return (
     <>
       <h1 id="article-title">{article.title}</h1>
-      <div id="article-subheader-container">
+      <section id="article-subheader-container">
         <p>
-          <span id="article-author">{article.author}</span> on {date}
+          <span id="article-author">{article.author}</span> on{" "}
+          {dayjs(article.created_at).format("DD/MM/YYYY")}
         </p>
         <p>
           Votes: {article.votes}
           <button>Vote</button>
         </p>
-      </div>
+      </section>
       <article>{article.body}</article>
       <img
         src={article.article_img_url}
