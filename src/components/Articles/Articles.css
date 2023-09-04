@@ -32,3 +32,17 @@
 .article-card-date {
   grid-area: date;
 }
+
+#page-buttons {
+  text-align: center;
+}
+
+#next-button, #prev-button {
+  background-color: #eb1b24;
+  border:none;
+  color: white;
+  margin: 10px;
+  font-weight: bolder;
+  height: 30px;
+  width: 70px;
+}
