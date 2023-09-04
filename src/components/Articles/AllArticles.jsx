@@ -7,11 +7,10 @@ import "./Articles.css"
 
 function AllArticles() {
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [queries, setQueries] = useState({})
 
   useEffect(() => {
-    setIsLoading(true);
     getArticles().then((articles) => {
       setIsLoading(false);
       setArticles(articles);
