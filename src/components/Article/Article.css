@@ -1,0 +1,22 @@
+#article-subheader-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#article-subheader-container > * {
+  margin-right: 15px; 
+}
+
+#article-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#article-author {
+  font-weight: bold;
+}
+
+#article-image {
+  max-width: 90vw;
+}
