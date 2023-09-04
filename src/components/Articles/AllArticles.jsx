@@ -3,18 +3,20 @@ import Pages from "./Pages";
 import Filters from "./Filters";
 import ArticleCard from "./ArticleCard";
 import { getArticles } from "../../../utils/api";
-import "./Articles.css"
+import "./Articles.css";
 
 function AllArticles() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [queries, setQueries] = useState({params: { p: 1, } });
 
   useEffect(() => {
-    getArticles().then((articles) => {
+    setIsLoading(true)
+    getArticles(queries).then((articles) => {
       setIsLoading(false);
       setArticles(articles);
     });
-  }, []);
+  }, [queries]);
 
   return (
     <main>
@@ -24,12 +26,16 @@ function AllArticles() {
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          articles.map((article) => {
+          articles.articles.map((article) => {
             return <ArticleCard key={article.article_id} article={article} />;
           })
         )}
       </section>
-      <Pages />
+      <Pages
+        total_count={articles.total_count}
+        queries={queries}
+        setQueries={setQueries}
+      />
     </main>
   );
 }

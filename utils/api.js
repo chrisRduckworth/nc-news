@@ -4,9 +4,9 @@ const newsApi = axios.create({
   baseURL: "https://chris-d-backend-news-project.onrender.com/api",
 });
 
-export function getArticles() {
-  return newsApi.get("/articles").then(({ data: { articles } }) => {
-    return articles;
+export function getArticles(queries) {
+  return newsApi.get("/articles", queries).then(({ data }) => {
+    return data;
   });
 }
 
