@@ -8,6 +8,7 @@ import "./Articles.css"
 function AllArticles() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [queries, setQueries] = useState({})
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,7 +31,7 @@ function AllArticles() {
           })
         )}
       </section>
-      <Pages />
+      <Pages setQueries={setQueries}/>
     </main>
   );
 }
