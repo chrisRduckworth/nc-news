@@ -7,8 +7,13 @@ import { useState } from "react";
 function Article() {
   const { article_id } = useParams();
   const [isError, setIsError] = useState(false);
-  
-  if (isError) return <main><p>Something went wrong</p></main>
+
+  if (isError)
+    return (
+      <main>
+        <p>Something went wrong</p>
+      </main>
+    );
 
   return (
     <main>

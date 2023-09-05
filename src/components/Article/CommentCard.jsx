@@ -9,7 +9,11 @@ function CommentCard({ comment }) {
         <p>{dayjs(comment.created_at).format("DD/MM/YYYY hh:mma")}</p>
       </section>
       <p>{comment.body}</p>
-      <VoteButtons votes={comment.votes} id={comment.comment_id} parent="comments"/>
+      <VoteButtons
+        votes={comment.votes}
+        id={comment.comment_id}
+        parent="comments"
+      />
     </li>
   );
 }
