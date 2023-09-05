@@ -66,9 +66,9 @@
     {
       "id": "pointer:pointer",
       "typeName": "pointer",
-      "x": 3389.236495174162,
-      "y": 2592.9249263247475,
-      "lastActivityTimestamp": 1693845054922,
+      "x": 2636.345342155241,
+      "y": 2874.4443297557873,
+      "lastActivityTimestamp": 1693845780772,
       "meta": {}
     },
     {
@@ -79,8 +79,8 @@
       "typeName": "page"
     },
     {
-      "x": -1930.6258948468958,
-      "y": -2417.2114731765146,
+      "x": -2046.8550477224594,
+      "y": -2381.313025759134,
       "z": 1.058541600927331,
       "meta": {},
       "id": "camera:page:b68j_4d8i9LVp8cih1ii5",
@@ -107,7 +107,7 @@
         "tldraw:geo": "rectangle",
         "tldraw:color": "green",
         "tldraw:arrowheadEnd": "arrow",
-        "tldraw:size": "l",
+        "tldraw:size": "m",
         "tldraw:font": "mono"
       },
       "brush": null,
@@ -12682,19 +12682,18 @@
       "typeName": "shape"
     },
     {
-      "x": 2494.5194558768267,
-      "y": 2594.134842910781,
+      "x": 2473.28014875417,
+      "y": 2592.932738824747,
       "rotation": 0,
       "isLocked": false,
       "opacity": 1,
       "meta": {},
-      "id": "shape:5FkL57Qwwq4MHzRcHs3cl",
       "type": "text",
       "props": {
         "color": "green",
-        "size": "l",
-        "w": 778.609375,
-        "text": "Extra: add first/last page buttons, \npage appears as query in url,\nnext button goes grey on last page",
+        "size": "m",
+        "w": 836.203125,
+        "text": "Extra: add first/last page buttons, \npage appears as query in url,\nnext button goes grey on last page,\nalso clicking button should redirect you to bottom of page",
         "font": "mono",
         "align": "middle",
         "autoSize": true,
@@ -12702,6 +12701,7 @@
       },
       "parentId": "page:b68j_4d8i9LVp8cih1ii5",
       "index": "b5A",
+      "id": "shape:5FkL57Qwwq4MHzRcHs3cl",
       "typeName": "shape"
     }
   ]

@@ -1,5 +1,8 @@
 .article-thumbnail {
-  width: 100px;
+  height: auto;
+  width: auto;
+  max-height: 100px;
+  max-width: 120px;
   grid-area: thumbnail;
   margin:auto;
 }
@@ -11,10 +14,14 @@
     'thumbnail topic votes'
     'thumbnail author date';
   border-bottom: 2px solid darkgrey;
+  padding: 1em;
+  background-color: rgb(236, 236, 236);
+  margin: 1em;
 }
 
 .article-card-title {
   grid-area: title;
+  word-wrap: normal;
 }
 
 .article-card-topic {
@@ -39,10 +46,16 @@
 
 #next-button, #prev-button {
   background-color: #eb1b24;
-  border:none;
+  border: 2px solid #eb1b24;
   color: white;
   margin: 10px;
   font-weight: bolder;
   height: 30px;
   width: 70px;
+}
+
+#page-buttons > button:hover {
+  background-color: white;
+  transition: background-color 0.2s;
+  color: #eb1b24
 }

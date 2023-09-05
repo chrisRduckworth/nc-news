@@ -11,7 +11,7 @@ function Content({ article_id }) {
       setIsLoading(false);
       setArticle(articleData);
     });
-  }, []);
+  }, []); //error handling for id=1000
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -24,16 +24,20 @@ function Content({ article_id }) {
           {dayjs(article.created_at).format("DD/MM/YYYY")}
         </p>
         <p>
-          Votes: {article.votes}
-          <button>Vote</button>
+          Votes:
+          <button className="vote-button">-</button>
+          {article.votes}
+          <button className="vote-button">+</button>
         </p>
       </section>
-      <article>{article.body}</article>
-      <img
-        src={article.article_img_url}
-        alt={`image relating to ${article.title}`}
-        id="article-image"
-      />
+      <article id="article-body">
+        <p>{article.body}</p>
+        <img
+          src={article.article_img_url}
+          alt={`image relating to ${article.title}`}
+          id="article-image"
+        />
+      </article>
     </>
   );
 }
