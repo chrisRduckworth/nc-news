@@ -54,3 +54,7 @@
 #comments-list {
   padding: 0;
 }
+
+.vote-failed {
+  color: red;
+}

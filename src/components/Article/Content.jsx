@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
 import { getArticleById } from "../../../utils/api";
 import dayjs from "dayjs";
+import VoteButtons from "./VoteButtons";
 
 function Content({ article_id, setIsError }) {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getArticleById(article_id).then((articleData) => {
-      setIsLoading(false);
-      setArticle(articleData);
-    }).catch((err) => {
-      setIsLoading(false)
-      setIsError(true)
-    })
-  }, [])
+    getArticleById(article_id)
+      .then((articleData) => {
+        setIsLoading(false);
+        setArticle(articleData);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setIsError(true);
+      });
+  }, []);
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <>
@@ -26,12 +29,7 @@ function Content({ article_id, setIsError }) {
           <span id="article-author">{article.author}</span> on{" "}
           {dayjs(article.created_at).format("DD/MM/YYYY")}
         </p>
-        <p>
-          Votes:
-          <button className="vote-button">-</button>
-          {article.votes}
-          <button className="vote-button">+</button>
-        </p>
+        <VoteButtons votes={article.votes} id={article_id} parent="articles" />
       </section>
       <article id="article-body">
         <p>{article.body}</p>
