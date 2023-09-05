@@ -1,14 +1,18 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../contexts/User";
 
 function Header() {
+  const { user } = useContext(UserContext);
   return (
     <header>
       <div id="header-container">
         <h1>Northcoders News</h1>
         <div id="header-buttons">
           <button>Dark Mode</button>
-          <Link to="/login">Login</Link>
+          {user}
+          <Link to="/login">{user ? "change user" : "login"}</Link>
         </div>
       </div>
       <nav className="shortcuts">
