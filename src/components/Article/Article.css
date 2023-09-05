@@ -5,12 +5,12 @@
 }
 
 #article-subheader-container > * {
-  margin-right: 15px; 
+  margin-right: 0.5em; 
 }
 
 #article-title {
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 #article-author {
@@ -19,4 +19,38 @@
 
 #article-image {
   max-width: 90vw;
+  margin: 2em auto;
+  display: block;
+}
+
+.vote-button {
+  margin: 0 1em; 
+  font-weight: bolder;
+  background-color: #eb1b24;
+  border: 2px solid #eb1b24;
+  color: white;
+  font-weight: bolder;
+  height: 2em;
+  width: 2em;
+}
+
+.vote-button:active {
+  background-color: white;
+  color: #eb1b24;
+}
+
+.comment {
+  background-color: rgb(236, 236, 236);
+  list-style-type: none;
+  padding: 1em 1em 1px;
+  margin: 2em 0;
+}
+
+.comment-header > * {
+  display: inline;
+  margin-right: 1em;
+}
+
+#comments-list {
+  padding: 0;
 }

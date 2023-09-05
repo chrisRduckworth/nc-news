@@ -15,3 +15,11 @@ export function getArticleById(id) {
     return article;
   });
 }
+
+export function getArticleComments(id) {
+  return newsApi
+    .get(`/articles/${id}/comments`, {params:{limit:1000}})
+    .then(({ data: { comments } }) => {
+      return comments;
+    });
+}
