@@ -27,3 +27,17 @@ export function getArticleComments(id) {
 export function patchArticleVote(id, inc_votes, parent) {
   return newsApi.patch(`/${parent}/${id}`, { inc_votes });
 }
+
+export function getUsers() {
+  return newsApi.get("/users").then(({ data: { users } }) => {
+    return users;
+  });
+}
+
+export function postComment(id, username, body) {
+  return newsApi
+    .post(`/articles/${id}/comments`, { username, body })
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+}

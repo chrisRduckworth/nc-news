@@ -59,3 +59,41 @@
 .vote-failed {
   color: red;
 }
+
+#form-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+#new-comment {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  height: 5em;
+}
+
+#submit-button {
+  background-color: black;
+  color: white;
+  margin: 1em 1em 0;
+  border: none;
+  height: 2em;
+  width: 6em;
+  border-radius: 1em/1em;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+#submit-button:disabled{
+  background-color: grey;
+  color:black;
+}
+
+#error-commenting {
+  color:red;
+}
+
+#comment-posted {
+  color: rgb(87, 87, 87);
+}
