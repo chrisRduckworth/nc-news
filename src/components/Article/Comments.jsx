@@ -16,11 +16,14 @@ function Comments({ article_id }) {
   if (isLoading) return <p>Loading comments...</p>;
 
   return (
-    <ol id="comments-list">
-      {comments.map((comment) => {
-        return <CommentCard key={comment.comment_id} comment={comment} />;
-      })}
-    </ol>
+    <section>
+      <h2>Comments</h2>
+      <ol id="comments-list">
+        {comments.map((comment) => {
+          return <CommentCard key={comment.comment_id} comment={comment} />;
+        })}
+      </ol>
+    </section>
   );
 }
 

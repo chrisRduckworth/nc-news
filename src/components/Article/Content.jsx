@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getArticleById } from "../../../utils/api";
 import dayjs from "dayjs";
 
-function Content({ article_id }) {
+function Content({ article_id, setIsError }) {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -10,10 +10,13 @@ function Content({ article_id }) {
     getArticleById(article_id).then((articleData) => {
       setIsLoading(false);
       setArticle(articleData);
-    });
-  }, []); //error handling for id=1000
+    }).catch((err) => {
+      setIsLoading(false)
+      setIsError(true)
+    })
+  }, [])
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <p>Loading...</p>
 
   return (
     <>
