@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import VoteButtons from "./VoteButtons";
 
 function CommentCard({ comment }) {
   return (
@@ -8,12 +9,11 @@ function CommentCard({ comment }) {
         <p>{dayjs(comment.created_at).format("DD/MM/YYYY hh:mma")}</p>
       </section>
       <p>{comment.body}</p>
-      <p>
-        Votes:
-        <button className="vote-button">-</button>
-        {comment.votes}
-        <button className="vote-button">+</button>
-      </p>
+      <VoteButtons
+        votes={comment.votes}
+        id={comment.comment_id}
+        parent="comments"
+      />
     </li>
   );
 }

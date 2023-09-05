@@ -18,8 +18,12 @@ export function getArticleById(id) {
 
 export function getArticleComments(id) {
   return newsApi
-    .get(`/articles/${id}/comments`, {params:{limit:1000}})
+    .get(`/articles/${id}/comments`, { params: { limit: 1000 } })
     .then(({ data: { comments } }) => {
       return comments;
     });
+}
+
+export function patchArticleVote(id, inc_votes, parent) {
+  return newsApi.patch(`/${parent}/${id}`, { inc_votes });
 }

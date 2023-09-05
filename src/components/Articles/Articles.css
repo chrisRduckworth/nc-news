@@ -1,27 +1,43 @@
 .article-thumbnail {
   height: auto;
   width: auto;
-  max-height: 100px;
-  max-width: 120px;
+  max-height: 112px;
   grid-area: thumbnail;
-  margin:auto;
+  margin: auto;
 }
 
 .article-card {
   display: grid;
-  grid-template-areas: 
-    'title title title'
-    'thumbnail topic votes'
-    'thumbnail author date';
+  grid-template-areas:
+    "title title title"
+    "thumbnail topic votes"
+    "thumbnail author date";
   border-bottom: 2px solid darkgrey;
   padding: 1em;
   background-color: rgb(236, 236, 236);
   margin: 1em;
+  border-left: 5px solid rgb(236, 236, 236);
 }
 
 .article-card-title {
   grid-area: title;
   word-wrap: normal;
+  border-left: 5px solid rgb(236, 236, 236);
+  padding-left: 0.5em;
+}
+
+.article-card:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.article-card:link {
+  color: black;
+  text-decoration: none;
+}
+
+.article-card:hover {
+  border-left: 5px solid #eb1b24;
 }
 
 .article-card-topic {
@@ -44,7 +60,8 @@
   text-align: center;
 }
 
-#next-button, #prev-button {
+#next-button,
+#prev-button {
   background-color: #eb1b24;
   border: 2px solid #eb1b24;
   color: white;
@@ -57,5 +74,25 @@
 #page-buttons > button:hover {
   background-color: white;
   transition: background-color 0.2s;
-  color: #eb1b24
+  color: #eb1b24;
+}
+
+@media only screen and (max-width: 500px) {
+  .article-card {
+    grid-template-areas:
+      "title"
+      "thumbnail"
+      "topic"
+      "votes"
+      "author"
+      "date";
+  }
+
+  .article-card > p {
+    text-align: center;
+  }
+}
+
+.article-card-subheadings {
+  color: rgb(87, 87, 87);
 }
