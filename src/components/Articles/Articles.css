@@ -60,8 +60,7 @@
   text-align: center;
 }
 
-#next-button,
-#prev-button {
+.page-button {
   background-color: #eb1b24;
   border: 2px solid #eb1b24;
   color: white;
@@ -70,8 +69,7 @@
   height: 30px;
   width: 70px;
 }
-
-#page-buttons > button:hover {
+.page-button:hover {
   background-color: white;
   transition: background-color 0.2s;
   color: #eb1b24;
@@ -95,4 +93,36 @@
 
 .article-card-subheadings {
   color: rgb(87, 87, 87);
+}
+
+.filter-button {
+  background-color: black;
+  border: none;
+  color: white;
+  margin: 10px;
+  font-weight: bolder;
+  height: 30px;
+  width: 70px;
+}
+
+.filter-button:hover {
+  background-color: rgb(61, 61, 61)
+}
+
+#filter-form {
+  margin-left: 1em
+}
+
+#topics-form {
+  font-size: 1em;
+  border: none;
+  height: 30px;
+  width: 120px;
+  background-color:  rgb(236, 236, 236);;
+  margin: 0 1em;
+  padding: 0.2em;
+}
+
+#topics-form > option:active {
+  background-color: red;
 }
