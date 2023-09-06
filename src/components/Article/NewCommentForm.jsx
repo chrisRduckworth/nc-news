@@ -12,23 +12,35 @@ function NewCommentForm({ setComments, article_id }) {
     event.preventDefault();
     if (!user) {
       setMessage("You must be logged in to post a comment");
-    } else if (newComment.length < 5 && newComment.length <= 500) {
+    } else if (newComment.length < 5 || newComment.length >= 500) {
       setMessage("Comments must be between 5 and 500 characters long");
     } else {
       setIsPosting(true);
-      setMessage("")
+      setMessage("");
+      setComments((currComments) => {
+        const commentIds = currComments.map((comment) => comment.comment_id);
+        const newCommentObject = {
+          author: user,
+          body: newComment,
+          comment_id: Math.max(...commentIds) + 1,
+          created_at: Date.now(),
+          votes: 0,
+          article_id,
+        };
+        return [newCommentObject, ...currComments];
+      });
+      const tempCommentStorage = newComment;
+      setNewComment("");
       postComment(article_id, user, newComment)
         .then((comment) => {
-          setComments((currComments) => {
-            return [comment, ...currComments];
-          });
           setMessage("Posted!");
-          setNewComment("");
           setIsPosting(false);
         })
         .catch((err) => {
           setIsPosting(false);
           setMessage("Something went wrong");
+          setNewComment(tempCommentStorage);
+          setComments((currComments) => currComments.slice(1));
         });
     }
   };
