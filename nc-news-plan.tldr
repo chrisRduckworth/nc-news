@@ -66,9 +66,9 @@
     {
       "id": "pointer:pointer",
       "typeName": "pointer",
-      "x": 4271.330844294883,
-      "y": 1974.0920480363245,
-      "lastActivityTimestamp": 1693994875103,
+      "x": 4283.213993002531,
+      "y": 2251.5140610541484,
+      "lastActivityTimestamp": 1694000244337,
       "meta": {}
     },
     {
@@ -79,8 +79,8 @@
       "typeName": "page"
     },
     {
-      "x": -2560.993918449928,
-      "y": -1559.1514363225956,
+      "x": -2617.7044462623844,
+      "y": -1513.5864357903977,
       "z": 0.8700040193921944,
       "meta": {},
       "id": "camera:page:b68j_4d8i9LVp8cih1ii5",
@@ -12791,7 +12791,7 @@
         "color": "black",
         "size": "m",
         "w": 591.40625,
-        "text": " - Standardize function declarations\n - Pagination of article comments\ninfinite scroll?\n - Better pagination of articles\n - Create user\n - Navigate back to where you clicked\nwhen login eg back to article\n - Comment posting css nicer - no awkward\n\"posted\"/\"error\" text.\n - When posting comment errors, comment \nshould have button to retry, not just\nbe removed\n - Figure a nicer way of rerendering\npagination of articles when given p=100\nbecause it should be outside the useE\nor something - it's inefficient to be\nrerendering when given no page",
+        "text": " - Standardize function declarations\n - Pagination of article comments\ninfinite scroll?\n - Better pagination of articles\n - Create user\n - Navigate back to where you clicked\nwhen login eg back to article\n - Comment posting css nicer - no awkward\n\"posted\"/\"error\" text.\n - When posting comment errors, comment \nshould have button to retry, not just\nbe removed\n - Figure a nicer way of rerendering\npagination of articles when given p=100\nbecause it should be outside the useE\nor something - it's inefficient to be\nrerendering when given no page. Similarly\nregarding filters",
         "font": "mono",
         "align": "start",
         "autoSize": true,
