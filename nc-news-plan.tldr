@@ -66,9 +66,9 @@
     {
       "id": "pointer:pointer",
       "typeName": "pointer",
-      "x": 3718.3168111295627,
-      "y": 2118.736448168908,
-      "lastActivityTimestamp": 1693929987276,
+      "x": 3821.9737972033986,
+      "y": 2289.2381822374805,
+      "lastActivityTimestamp": 1693989858536,
       "meta": {}
     },
     {
@@ -79,15 +79,15 @@
       "typeName": "page"
     },
     {
-      "x": -3422.7253681918755,
-      "y": -1732.5808184588227,
-      "z": 0.795016248320624,
+      "x": -3256.7105421645783,
+      "y": -1519.1144186611016,
+      "z": 0.5271879913360625,
       "meta": {},
       "id": "camera:page:b68j_4d8i9LVp8cih1ii5",
       "typeName": "camera"
     },
     {
-      "editingId": "shape:5twyZcXiLj96U2ecREtuK",
+      "editingId": null,
       "croppingId": null,
       "selectedIds": [],
       "hoveredId": null,
@@ -125,7 +125,7 @@
         "x": 0,
         "y": 0,
         "w": 786,
-        "h": 632
+        "h": 620
       },
       "zoomBrush": null,
       "isGridMode": false,
@@ -12780,8 +12780,8 @@
       "typeName": "shape"
     },
     {
-      "x": 3597.475734698577,
-      "y": 1800.3376156279114,
+      "x": 3574.7134559721817,
+      "y": 1787.0596197041807,
       "rotation": 0,
       "isLocked": false,
       "opacity": 1,
@@ -12790,8 +12790,8 @@
       "props": {
         "color": "black",
         "size": "m",
-        "w": 865,
-        "text": "Pagination of article comments\ninfinite scroll?\nBetter pagination of articles\nCreate user\nNavigate back to where you clicked\nwhen login eg back to article\nComment posting  console.log(queries) css nicer - no awkward\n\"posted\"/\"error\" text\nStop everything from rendering too\nrepeatedly",
+        "w": 591.40625,
+        "text": " - Pagination of article comments\ninfinite scroll?\n - Better pagination of articles\n - Create user\n - Navigate back to where you clicked\nwhen login eg back to article\n - Comment posting css nicer - no awkward\n\"posted\"/\"error\" text.\n - When posting comment errors, comment \nshould have button to retry, not just\nbe removed",
         "font": "mono",
         "align": "start",
         "autoSize": true,
