@@ -30,9 +30,10 @@ function Filters({ setSearchParams }) {
   };
 
   return (
-    <form>
+    <form id="filter-form">
       <label htmlFor="topics-form">Topics: </label>
       <select id="topics-form" onChange={handleFormChange}>
+        <option value=""></option>
         {topics.map((topic) => {
           return (
             <option key={topic.slug} value={topic.slug}>
@@ -41,7 +42,7 @@ function Filters({ setSearchParams }) {
           );
         })}
       </select>
-      <button onClick={handleFormSubmit}>Filter</button>
+      <button onClick={handleFormSubmit} className="filter-button">Filter</button>
     </form>
   );
 }
