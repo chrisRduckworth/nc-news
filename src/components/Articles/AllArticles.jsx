@@ -4,19 +4,30 @@ import Filters from "./Filters";
 import ArticleCard from "./ArticleCard";
 import { getArticles } from "../../../utils/api";
 import "./Articles.css";
+import { useSearchParams } from "react-router-dom";
+
+// TO DO:
+// figure out why it's rendering so many bloody times
+// do ali's optimistic rendering
+// get categories to work
+// error for page = 10. or redirect?
 
 function AllArticles() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [queries, setQueries] = useState({params: { p: 1, } });
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  if (!searchParams.get("p")) searchParams.set("p", 1);
 
   useEffect(() => {
-    setIsLoading(true)
-    getArticles(queries).then((articles) => {
+    setIsLoading(true);
+    getArticles({ p: searchParams.get("p") }).then((articles) => {
       setIsLoading(false);
       setArticles(articles);
     });
-  }, [queries]);
+  }, [searchParams]);
+
+  console.log(searchParams.get("p"));
 
   return (
     <main>
@@ -33,8 +44,8 @@ function AllArticles() {
       </section>
       <Pages
         total_count={articles.total_count}
-        queries={queries}
-        setQueries={setQueries}
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
       />
     </main>
   );

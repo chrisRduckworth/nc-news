@@ -66,9 +66,9 @@
     {
       "id": "pointer:pointer",
       "typeName": "pointer",
-      "x": 3678.770993969091,
-      "y": 1778.8622421200414,
-      "lastActivityTimestamp": 1693924683971,
+      "x": 3718.3168111295627,
+      "y": 2118.736448168908,
+      "lastActivityTimestamp": 1693929987276,
       "meta": {}
     },
     {
@@ -79,9 +79,9 @@
       "typeName": "page"
     },
     {
-      "x": -3159.087587094005,
-      "y": -1594.859504757571,
-      "z": 0.4021679300032692,
+      "x": -3422.7253681918755,
+      "y": -1732.5808184588227,
+      "z": 0.795016248320624,
       "meta": {},
       "id": "camera:page:b68j_4d8i9LVp8cih1ii5",
       "typeName": "camera"
@@ -125,7 +125,7 @@
         "x": 0,
         "y": 0,
         "w": 786,
-        "h": 699
+        "h": 632
       },
       "zoomBrush": null,
       "isGridMode": false,
@@ -12790,8 +12790,8 @@
       "props": {
         "color": "black",
         "size": "m",
-        "w": 548.203125,
-        "text": "Pagination of article comments\ninfinite scroll?\nBetter pagination of articles\nCreate user\nNavigate back to where you clicked\nwhen login eg back to article\nComment posting css nicer - no awkward\n\"posted\"/\"error\" text",
+        "w": 865,
+        "text": "Pagination of article comments\ninfinite scroll?\nBetter pagination of articles\nCreate user\nNavigate back to where you clicked\nwhen login eg back to article\nComment posting  console.log(queries) css nicer - no awkward\n\"posted\"/\"error\" text\nStop everything from rendering too\nrepeatedly",
         "font": "mono",
         "align": "start",
         "autoSize": true,
