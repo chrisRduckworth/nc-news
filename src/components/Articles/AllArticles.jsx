@@ -14,7 +14,12 @@ function AllArticles() {
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles({ p: searchParams.get("p"), topic: searchParams.get("topic") })
+    getArticles({
+      p: searchParams.get("p"),
+      topic: searchParams.get("topic"),
+      sort_by: searchParams.get("sort_by"),
+      order: searchParams.get("order"),
+    })
       .then((articles) => {
         const lastPage = Math.ceil(articles.total_count / 10) || 1;
         if (searchParams.get("p") > lastPage) {
