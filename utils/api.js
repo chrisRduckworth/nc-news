@@ -5,7 +5,7 @@ const newsApi = axios.create({
 });
 
 export function getArticles(queries) {
-  return newsApi.get("/articles", {params: queries}).then(({ data }) => {
+  return newsApi.get("/articles", { params: queries }).then(({ data }) => {
     return data;
   });
 }
@@ -40,4 +40,10 @@ export function postComment(id, username, body) {
     .then(({ data: { comment } }) => {
       return comment;
     });
+}
+
+export function getTopics() {
+  return newsApi.get("/topics").then(({ data: { topics } }) => {
+    return topics;
+  });
 }

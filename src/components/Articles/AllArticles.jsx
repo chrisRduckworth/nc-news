@@ -7,13 +7,6 @@ import { getArticles } from "../../../utils/api";
 import "./Articles.css";
 import { useSearchParams } from "react-router-dom";
 
-// TO DO:
-// figure out why it's rendering so many bloody times DONE but i don't know how to fix it
-// it's because every time state changes it rerenders, including when isLoading etc
-// do ali's optimistic rendering DONE
-// get categories to work
-// error for page = 10. or redirect? DONE
-
 function AllArticles() {
   const [articles, setArticles] = useState({ articles: [], total_count: 0 });
   const [isLoading, setIsLoading] = useState(true);
@@ -52,7 +45,7 @@ function AllArticles() {
   return (
     <main>
       <h1>Articles</h1>
-      <Filters />
+      <Filters setSearchParams={setSearchParams} />
       <ArticlesList articles={articles} isLoading={isLoading} />
       <Pages
         total_count={articles.total_count}
