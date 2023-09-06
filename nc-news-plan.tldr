@@ -66,9 +66,9 @@
     {
       "id": "pointer:pointer",
       "typeName": "pointer",
-      "x": 4325.742532153246,
-      "y": 2425.0764775881457,
-      "lastActivityTimestamp": 1693999901685,
+      "x": 4283.213993002531,
+      "y": 2251.5140610541484,
+      "lastActivityTimestamp": 1694000244337,
       "meta": {}
     },
     {
@@ -12791,7 +12791,7 @@
         "color": "black",
         "size": "m",
         "w": 591.40625,
-        "text": " - Standardize function declarations\n - Pagination of article comments\ninfinite scroll?\n - Better pagination of articles\n - Create user\n - Navigate back to where you clicked\nwhen login eg back to article\n - Comment posting css nicer - no awkward\n\"posted\"/\"error\" text.\n - When posting comment errors, comment \nshould have button to retry, not just\nbe removed\n - Figure a nicer way of rerendering\npagination of articles when given p=100\nbecause it should be outside the useE\nor something - it's inefficient to be\nrerendering when given no page. Similarly\nregarding filters\n - Make url cleaner when filtering \nwith defaults",
+        "text": " - Standardize function declarations\n - Pagination of article comments\ninfinite scroll?\n - Better pagination of articles\n - Create user\n - Navigate back to where you clicked\nwhen login eg back to article\n - Comment posting css nicer - no awkward\n\"posted\"/\"error\" text.\n - When posting comment errors, comment \nshould have button to retry, not just\nbe removed\n - Figure a nicer way of rerendering\npagination of articles when given p=100\nbecause it should be outside the useE\nor something - it's inefficient to be\nrerendering when given no page. Similarly\nregarding filters",
         "font": "mono",
         "align": "start",
         "autoSize": true,

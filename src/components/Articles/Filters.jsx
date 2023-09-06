@@ -3,10 +3,7 @@ import { getTopics } from "../../../utils/api";
 
 function Filters({ setSearchParams }) {
   const [topics, setTopics] = useState([]);
-  const [filtersForm, setFiltersForm] = useState({
-    sort_by: "date",
-    order: "desc",
-  });
+  const [filtersForm, setFiltersForm] = useState({});
 
   useEffect(() => {
     getTopics().then((topicsData) => {
