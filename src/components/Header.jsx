@@ -11,7 +11,7 @@ function Header() {
         <h1>Northcoders News</h1>
         <div id="header-buttons">
           <button>Dark Mode</button>
-          {user}
+          {user.username}
           <Link to="/login">{user ? "change user" : "login"}</Link>
         </div>
       </div>

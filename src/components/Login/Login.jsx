@@ -2,11 +2,13 @@ import { useEffect, useState, useContext } from "react";
 import { getUsers } from "../../../utils/api";
 import { UserContext } from "../../contexts/User";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 function Login() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [chosenUser, setChosenUser] = useState("");
+  const [invalidUser, setInvalidUser] = useState(false);
+  const [userForm, setUserForm] = useState("");
 
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
@@ -20,9 +22,12 @@ function Login() {
 
   const loginAsUser = (event) => {
     event.preventDefault();
-    if (chosenUser !== "") {
-      setUser(chosenUser);
-      navigate("/");
+    const userMatch = users.find((user) => user.username === userForm);
+    if (userMatch) {
+      setUser(userMatch);
+      navigate("/articles");
+    } else {
+      setInvalidUser(true);
     }
   };
 
@@ -34,20 +39,20 @@ function Login() {
     );
 
   return (
-    <main>
+    <main id="login-page">
       <h1>Login as existing user</h1>
       <form>
-        <label htmlFor="username">Username: </label>
-        <select id="username" onChange={(e) => setChosenUser(e.target.value)}>
-          <option></option>
-          {users.map((user) => {
-            return (
-              <option key={user.username} value={user.username}>
-                {user.username}
-              </option>
-            );
-          })}
-        </select>
+        <label htmlFor="username">
+          <h3>Username: </h3>
+        </label>
+        <p>
+          <input
+            type="text"
+            value={userForm}
+            onChange={(e) => setUserForm(e.target.value)}
+          />
+        </p>
+        <p id="invalid-user">{invalidUser && "Invalid user"}</p>
         <button onClick={loginAsUser}>Login</button>
       </form>
     </main>
