@@ -47,7 +47,7 @@ function CommentCard({
           parent="comments"
         />
         <div className="delete-container">
-          {errorDeleting && <p>Error</p>}
+          {errorDeleting && <p>Failed</p>}
           {user === comment.author && (
             <button onClick={handleDelete} className="delete-button">
               Delete
