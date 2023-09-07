@@ -47,3 +47,7 @@ export function getTopics() {
     return topics;
   });
 }
+
+export function deleteComment(comment_id) {
+  return newsApi.delete(`/comments/${comment_id}`);
+}
