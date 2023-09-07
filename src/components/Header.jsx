@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/User";
 import { getTopics } from "../../utils/api";
 
 function Header() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
@@ -18,10 +18,10 @@ function Header() {
         <h1>Northcoders News</h1>
         <button>🌙</button>
       </div>
-      <nav className="shortcuts">
-        <div className="left-shortcuts">
-          <div className="dropdown">
-            <span className="header-link">Articles ↓</span>
+      <div className="shortcuts">
+        <nav className="left-shortcuts">
+          <div className="dropdown" tabindex="0">
+            <span className="header-link" id="article-dropdown" aria-label="select article topic dropdown">Articles ↓</span>
             <div className="dropdown-content">
               <Link to="/articles">View all</Link>
               {topics.map((topic) => {
@@ -39,14 +39,14 @@ function Header() {
           <Link to="/users" className="header-link">
             Users
           </Link>
-        </div>
+        </nav>
         <div>
-          {user}
-          <Link to="/login" id="login-link">
-            {user ? "Change user" : "Login"}
+          {user.username}
+          <Link to="/login" id="login-link" onClick={(e) => setUser({})}>
+            {user.username ? "Log out" : "Log in"}
           </Link>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }

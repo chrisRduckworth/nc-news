@@ -10,7 +10,7 @@ function NewCommentForm({ setComments, article_id }) {
 
   const submitComment = (event) => {
     event.preventDefault();
-    if (!user) {
+    if (!user.username) {
       setMessage("You must be logged in to post a comment");
     } else if (newComment.length < 5 || newComment.length >= 500) {
       setMessage("Comments must be between 5 and 500 characters long");
@@ -18,7 +18,7 @@ function NewCommentForm({ setComments, article_id }) {
       setIsPosting(true);
       setMessage("");
       const newCommentObject = {
-        author: user,
+        author: user.username,
         body: newComment,
         comment_id: -1,
         created_at: Date.now(),
@@ -30,7 +30,7 @@ function NewCommentForm({ setComments, article_id }) {
       });
       const tempCommentStorage = newComment;
       setNewComment("");
-      postComment(article_id, user, newComment)
+      postComment(article_id, user.username, newComment)
         .then((comment_data) => {
           setMessage("Posted!");
           setIsPosting(false);

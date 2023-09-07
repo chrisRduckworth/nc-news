@@ -40,7 +40,7 @@ function CommentCard({
         <p>{dayjs(comment.created_at).format("DD/MM/YYYY hh:mma")}</p>
       </section>
       <p>{comment.body}</p>
-      <div className="button-container">
+      <section className="button-container">
         <VoteButtons
           votes={comment.votes}
           id={comment.comment_id}
@@ -48,13 +48,13 @@ function CommentCard({
         />
         <div className="delete-container">
           {errorDeleting && <p>Failed</p>}
-          {user === comment.author && (
+          {user.username === comment.author && (
             <button onClick={handleDelete} className="delete-button">
               Delete
             </button>
           )}
         </div>
-      </div>
+      </section>
     </li>
   );
 }
