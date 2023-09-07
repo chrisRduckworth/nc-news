@@ -34,34 +34,40 @@ function Filters({ setSearchParams }) {
 
   return (
     <form id="filter-form">
-      <label htmlFor="topics-form">Topics:</label>
-      <select id="topics-form" onChange={(e) => handleFormChange(e, "topic")}>
-        <option value="">View all</option>
-        {topics.map((topic) => {
-          return (
-            <option key={topic.slug} value={topic.slug}>
-              {topic.slug}
-            </option>
-          );
-        })}
-      </select>
-      <label htmlFor="sort-by-form">Sort by:</label>
-      <select
-        id="sort-by-form"
-        onChange={(e) => handleFormChange(e, "sort_by")}
-      >
-        <option value="date">Date</option>
-        <option value="comment_count">Comment count</option>
-        <option value="votes">Votes</option>
-      </select>
-      <label htmlFor="order-form">Order:</label>
-      <select id="order-form" onChange={(e) => handleFormChange(e, "order")}>
-        <option value="desc">Descending</option>
-        <option value="asc">Ascending</option>
-      </select>
-      <button onClick={handleFormSubmit} className="filter-button">
-        Filter
-      </button>
+      <div>
+        <label htmlFor="topics-form">Topics:</label>
+        <select id="topics-form" onChange={(e) => handleFormChange(e, "topic")}>
+          <option value="">View all</option>
+          {topics.map((topic) => {
+            return (
+              <option key={topic.slug} value={topic.slug}>
+                {topic.slug}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+      <div>
+        <label htmlFor="sort-by-form">Sort by:</label>
+        <select
+          id="sort-by-form"
+          onChange={(e) => handleFormChange(e, "sort_by")}
+        >
+          <option value="date">Date</option>
+          <option value="comment_count">Comment count</option>
+          <option value="votes">Votes</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="order-form">Order:</label>
+        <select id="order-form" onChange={(e) => handleFormChange(e, "order")}>
+          <option value="desc">Descending</option>
+          <option value="asc">Ascending</option>
+        </select>
+      </div>
+        <button onClick={handleFormSubmit} className="filter-button">
+          Filter
+        </button>
     </form>
   );
 }

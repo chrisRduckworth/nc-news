@@ -1,26 +1,52 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../contexts/User";
+import { getTopics } from "../../utils/api";
 
 function Header() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+  const [topics, setTopics] = useState([]);
+
+  useEffect(() => {
+    getTopics().then((topicData) => setTopics(topicData));
+  }, []);
+
   return (
     <header>
       <div id="header-container">
         <h1>Northcoders News</h1>
-        <div id="header-buttons">
-          <button>Dark Mode</button>
+        <button>🌙</button>
+      </div>
+      <div className="shortcuts">
+        <nav className="left-shortcuts">
+          <div className="dropdown" tabindex="0">
+            <span className="header-link" id="article-dropdown" aria-label="select article topic dropdown">Articles ↓</span>
+            <div className="dropdown-content">
+              <Link to="/articles">View all</Link>
+              {topics.map((topic) => {
+                return (
+                  <Link key={topic.slug} to={`/articles?topic=${topic.slug}`}>
+                    {topic.slug}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+          <Link to="/new_article" className="header-link">
+            New Article
+          </Link>
+          <Link to="/users" className="header-link">
+            Users
+          </Link>
+        </nav>
+        <div>
           {user.username}
-          <Link to="/login">{user ? "change user" : "login"}</Link>
+          <Link to="/login" id="login-link" onClick={(e) => setUser({})}>
+            {user.username ? "Log out" : "Log in"}
+          </Link>
         </div>
       </div>
-      <nav className="shortcuts">
-        <Link to="/articles">Articles</Link>
-        <Link to="/new_article">New Article</Link>
-        <Link to="/users">Users</Link>
-        {/* some sort of categories link as well */}
-      </nav>
     </header>
   );
 }
