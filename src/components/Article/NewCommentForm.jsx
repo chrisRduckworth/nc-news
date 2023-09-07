@@ -3,10 +3,10 @@ import { UserContext } from "../../contexts/User";
 import { postComment } from "../../../utils/api";
 
 function NewCommentForm({ setComments, article_id }) {
-  const [newComment, setNewComment] = useState("");
+  const { user } = useContext(UserContext);
   const [message, setMessage] = useState("");
   const [isPosting, setIsPosting] = useState(false);
-  const { user } = useContext(UserContext);
+  const [newComment, setNewComment] = useState("");
 
   const submitComment = (event) => {
     event.preventDefault();
@@ -17,24 +17,27 @@ function NewCommentForm({ setComments, article_id }) {
     } else {
       setIsPosting(true);
       setMessage("");
+      const newCommentObject = {
+        author: user,
+        body: newComment,
+        comment_id: -1,
+        created_at: Date.now(),
+        votes: 0,
+        article_id,
+      };
       setComments((currComments) => {
-        const commentIds = currComments.map((comment) => comment.comment_id);
-        const newCommentObject = {
-          author: user,
-          body: newComment,
-          comment_id: Math.max(...commentIds) + 1,
-          created_at: Date.now(),
-          votes: 0,
-          article_id,
-        };
         return [newCommentObject, ...currComments];
       });
       const tempCommentStorage = newComment;
       setNewComment("");
       postComment(article_id, user, newComment)
-        .then((comment) => {
+        .then((comment_data) => {
           setMessage("Posted!");
           setIsPosting(false);
+          setComments((currComments) => {
+            newCommentObject.comment_id = comment_data.comment_id;
+            return [newCommentObject, ...currComments.slice(1)];
+          });
         })
         .catch((err) => {
           setIsPosting(false);
