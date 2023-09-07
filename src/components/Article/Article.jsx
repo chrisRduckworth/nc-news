@@ -11,7 +11,11 @@ function Article() {
   if (isError)
     return (
       <main>
-        <p>Something went wrong</p>
+        {isError === 400 || isError === 404 ? (
+          <p>Article not found</p>
+        ) : (
+          <p>Something went wrong</p>
+        )}
       </main>
     );
 

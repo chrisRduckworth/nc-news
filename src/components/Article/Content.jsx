@@ -15,7 +15,7 @@ function Content({ article_id, setIsError }) {
       })
       .catch((err) => {
         setIsLoading(false);
-        setIsError(true);
+        setIsError(err.response.status);
       });
   }, []);
 
