@@ -1,0 +1,25 @@
+#new-article-form {
+  display: grid;
+  grid-template-columns: 8em auto;
+  justify-items: start;
+  align-items: end;
+  margin-left: 1em;
+}
+
+.new-article-form-item {
+  grid-column: 1/3;
+}
+#new-article-form > input {
+  width: 400px;
+  max-width: 80vw;
+}
+
+#new-article-content-form {
+  width: 700px;
+  max-width: 80vw;
+}
+
+#new-article-topic-form {
+  width: 12em;
+  max-width: 50vw;
+}
