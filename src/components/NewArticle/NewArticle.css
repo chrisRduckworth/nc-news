@@ -4,6 +4,9 @@
   justify-items: start;
   align-items: end;
   margin-left: 1em;
+  background-color: rgb(236, 236, 236);
+  border-bottom: 2px solid grey;
+  padding: 0 2em 2em;
 }
 
 .new-article-form-item {
@@ -11,15 +14,40 @@
 }
 #new-article-form > input {
   width: 400px;
-  max-width: 80vw;
+  max-width: 70vw
 }
 
 #new-article-content-form {
   width: 700px;
-  max-width: 80vw;
+  max-width: 70vw;
 }
 
 #new-article-topic-form {
   width: 12em;
   max-width: 50vw;
+}
+
+.bottom-row {
+  align-self: center;
+  margin-top: 1em;
+}
+
+span.bottom-row {
+  color: red;
+}
+
+#submit-article-button {
+  background-color: black;
+  color: white;
+  border: none;
+  height: 2em;
+  width: 6em;
+  border-radius: 1em/1em;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+#submit-article-button:disabled{
+  background-color: grey;
+  color:black;
 }
