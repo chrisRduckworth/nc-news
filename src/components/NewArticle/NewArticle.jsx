@@ -64,10 +64,10 @@ function NewArticle() {
         <TopicForm setForm={setForm} />
         <ContentForm form={form} setForm={setForm} />
         <ImageForm form={form} setForm={setForm} />
-        <button onClick={handleSubmit} disabled={isPosting}>
+        <button id="submit-article-button" className="bottom-row" onClick={handleSubmit} disabled={isPosting}>
           {isPosting ? "Posting..." : "Submit"}
         </button>
-        <span>{formFailed}</span>
+        <span className="bottom-row">{formFailed}</span>
       </form>
     </main>
   );
