@@ -25,7 +25,7 @@ function Login() {
     const userMatch = users.find((user) => user.username === userForm);
     if (userMatch) {
       setUser(userMatch);
-      navigate("/articles");
+      navigate("/");
     } else {
       setInvalidUser(true);
     }
