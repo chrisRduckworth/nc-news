@@ -69,6 +69,11 @@ header {
   border: 2px solid black;
 }
 
+#header-container > a {
+  text-decoration: none;
+  color: black;
+}
+
 @media only screen and (max-width: 400px) {
   .left-shortcuts {
     flex-direction: column;
