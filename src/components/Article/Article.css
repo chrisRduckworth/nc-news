@@ -129,3 +129,28 @@
   color: #eb1b24;
   background-color: white;
 }
+
+.delete-button:disabled {
+  color: black;
+  background-color: #ee797e;
+  border-color: #ee797e;
+}
+
+#article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-right: 1.3em;
+}
+
+.delete-article-container {
+  display:flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.delete-article-container > p {
+  margin-block-end: 0;
+  color: red;
+}

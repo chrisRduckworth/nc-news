@@ -57,3 +57,7 @@ export function postArticle(article) {
     return article;
   });
 }
+
+export function deleteArticle(article_id) {
+  return newsApi.delete(`/articles/${article_id}`)
+}
