@@ -1,0 +1,26 @@
+.latest-comment-card {
+  background-color: rgb(236, 236, 236);
+  padding: 0.5em 1em 1px;
+  margin: 2em 1em;
+}
+
+.latest-comment-card a {
+  color: black;
+}
+
+.latest-comment-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+ol {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.home-links {
+  color: black;
+  font-size: larger;
+  text-align: center;
+}

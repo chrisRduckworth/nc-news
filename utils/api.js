@@ -59,5 +59,13 @@ export function postArticle(article) {
 }
 
 export function deleteArticle(article_id) {
-  return newsApi.delete(`/articles/${article_id}`)
+  return newsApi.delete(`/articles/${article_id}`);
+}
+
+export function getComments(queries) {
+  return newsApi
+    .get("/comments", { params: queries })
+    .then(({ data: { comments } }) => {
+      return comments
+    });
 }

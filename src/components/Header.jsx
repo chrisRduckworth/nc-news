@@ -15,11 +15,16 @@ function Header() {
   return (
     <header>
       <div id="header-container">
-        <h1>Northcoders News</h1>
+        <Link to="/">
+          <h1>Northcoders News</h1>
+        </Link>
         <button>🌙</button>
       </div>
       <div className="shortcuts">
         <nav className="left-shortcuts">
+          <Link to="/" className="header-link">
+            Home
+          </Link>
           <div className="dropdown" tabIndex="0">
             <span
               className="header-link"
