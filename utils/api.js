@@ -51,3 +51,9 @@ export function getTopics() {
 export function deleteComment(comment_id) {
   return newsApi.delete(`/comments/${comment_id}`);
 }
+
+export function postArticle(article) {
+  return newsApi.post("/articles", article).then(({ data: { article } }) => {
+    return article;
+  });
+}

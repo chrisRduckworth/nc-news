@@ -20,8 +20,14 @@ function Header() {
       </div>
       <div className="shortcuts">
         <nav className="left-shortcuts">
-          <div className="dropdown" tabindex="0">
-            <span className="header-link" id="article-dropdown" aria-label="select article topic dropdown">Articles ↓</span>
+          <div className="dropdown" tabIndex="0">
+            <span
+              className="header-link"
+              id="article-dropdown"
+              aria-label="select article topic dropdown"
+            >
+              Articles ↓
+            </span>
             <div className="dropdown-content">
               <Link to="/articles">View all</Link>
               {topics.map((topic) => {
